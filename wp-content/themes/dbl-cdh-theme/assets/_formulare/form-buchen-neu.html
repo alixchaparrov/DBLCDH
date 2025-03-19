@@ -1,0 +1,349 @@
+<small>Felder mit einem * sind Pflichtfelder.</small>
+
+[step title "Kundendaten" next "weiter" previous "zurück"]
+[dynamic_hidden gettarif dtx_pageload "CF7_GET key='post_slug'"]
+[dynamic_hidden gettitle dtx_pageload "CF7_GET key='title'"]
+[dynamic_hidden getmode dtx_pageload "CF7_GET key='mode'"]
+[dynamic_hidden getplz dtx_pageload "CF7_GET key='plz'"]
+[dynamic_hidden getort dtx_pageload "CF7_GET key='ort'"]
+[group modestrom][dynamic_hidden getkwh dtx_pageload "CF7_GET key='kw_value'"][/group]
+[group modegas][dynamic_hidden getkwhgas dtx_pageload "CF7_GET key='gas_value'"][/group]
+
+<div class="form-wrapper">
+    <h2>Kundendaten</h2>
+    <p>Die vollständigen Angaben sind erforderlich, damit die Stadtwerke Dülmen GmbH (nachfolgend kurz: SW Dülmen) den Auftrag in Ihrem Interesse reibungslos und schnell ausführen kann.</p>
+
+    <p class="grouptitle">Sind Sie bereits Kunde bei uns?</p>
+    <div role="group" aria-labelledby="bereits-kunde">
+        [radio bereits-kunde id:bereits-kunde use_label_element default:2 "Ja" "Nein"]
+    </div>
+
+    [group kunde_ja]
+    <div class="alert alert-info">Hinweis: Bestandskunden können einen Tarifwechsel auch über unser Online-Kundenportal vornehmen. <a href="https://onlineservice.service-rz.de/?act=login&werknr=23" target="_blank" title="Link öffnet in neuem Fenster">(Link zum Kundenportal)</a></div>
+
+    <label for="kdnr">Geben Sie hier Ihre Kundennummer an *
+        <span class="help-tooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="cdh-tooltip" data-bs-title="Ihre Kundennummer finden Sie z.B. auf Ihrer letzten Rechnung."></span>
+        [text* kdnr id:kdnr placeholder "Kundennummer"]
+    </label>
+    [/group]
+
+    <p class="grouptitle">Privatperson oder Gewerbe?</p>
+    <div role="group" aria-labelledby="kundentyp">
+        [radio kundentyp id:kundentyp use_label_element default:1 "Privatperson" "Gewerbe"]
+    </div>
+
+    [group gewerbe-1]
+    <label for="firma">Firma *
+        [text* firma id:firma autocomplete:organization placeholder "Firma"]
+    </label>
+    [/group]
+
+    <label for="anrede">Anrede *
+        [select* anrede id:anrede class:noselect2 include_blank "Herr" "Frau" "Divers"]
+    </label>
+
+    [group is_divers]
+    <label for="pronomen">Wie lauten Ihre Pronomen?
+        [text pronomen id:pronomen placeholder "Pronomen"]
+    </label>
+    [/group]
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <label for="vorname">Vorname *
+                [text* vorname id:vorname autocomplete:given-name placeholder "Vorname"]
+            </label>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="nachname">Nachname *
+                [text* nachname id:nachname autocomplete:family-name placeholder "Nachname"]
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <label for="telefon">Telefon *
+                [text* telefon id:telefon autocomplete:tel placeholder "Telefon"]
+            </label>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="email">E-Mail *
+                [email* email id:email autocomplete:email placeholder"E-Mail"]
+            </label>
+        </div>
+    </div>
+
+    <label for="geburtsdatum">Geburtsdatum *
+        [date* geburtsdatum id:geburtsdatum max:today-17years autocomplete:bday]
+    </label>
+
+    [group gewerbe-2]
+    <label for="handelsregister">Handelsregisternummer *
+        [text* handelsregister id:handelsregister autocomplete:organization placeholder "Handelsregisternummer"]
+    </label>
+    <label for="ansprechpartner">Ansprechpartner:in *
+        [text* ansprechpartner id:ansprechpartner autocomplete:organization placeholder "Ansprechpartner:in"]
+    </label>
+    [/group]
+</div>
+
+<div class="form-wrapper">
+    <h3>Postanschrift</h3>
+    <label for="strasse-post">Straße, Hausnummer *
+        [text* strasse-post id:strasse-post autocomplete:street-address placeholder "Straße, Hausnummer"]
+    </label>
+
+    <div class="row">
+        <div class="col-12 col-md-5">
+            <label for="plz-post">PLZ *
+                [text* plz-post id:plz-post minlength:5 maxlength:5 autocomplete:postal-code placeholder "Postleitzahl"]
+            </label>
+        </div>
+        <div class="col-12 col-md-7">
+            <label for="ort-post">Ort *
+                [text* ort-post id:ort-post autocomplete:address-level2 placeholder "Ort"]
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="form-wrapper">
+    <h3>Abweichende Rechnungsanschrift</h3>
+
+    <p class="grouptitle">Gibt es eine abweichende Rechnungsanschrift?</p>
+    <div role="group" aria-labelledby="rechnungsanschrift">
+        [radio rechnungsanschrift id:rechnungsanschrift use_label_element default:2 "Ja" "Nein"]
+    </div>
+
+    [group rechnungsanschrift_abweichend]
+    <label for="anrede_rechnung">Anrede *
+        [select* anrede_rechnung id:anrede_rechnung class:noselect2 include_blank "Herr" "Frau" "Divers"]
+    </label>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <label for="vorname_rechnung">Vorname *
+                [text* vorname_rechnung id:vorname_rechnung autocomplete:given-name placeholder "Vorname"]
+            </label>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="nachname_rechnung">Nachname *
+                [text* nachname_rechnung id:nachname_rechnung autocomplete:family-name placeholder "Nachname"]
+            </label>
+        </div>
+    </div>
+
+    <label for="strasse_rechnung">Straße, Hausnummer *
+        [text* strasse_rechnung id:strasse_rechnung autocomplete:street-address placeholder "Straße, Hausnummer"]
+    </label>
+
+    <div class="row">
+        <div class="col-12 col-md-5">
+            <label for="plz_rechnung">PLZ *
+                [text* plz_rechnung id:plz_rechnung minlength:5 maxlength:5 autocomplete:postal-code placeholder "Postleitzahl"]
+            </label>
+        </div>
+        <div class="col-12 col-md-7">
+            <label for="ort_rechnung">Ort *
+                [text* ort_rechnung id:ort_rechnung autocomplete:address-level2 placeholder "Ort"]
+            </label>
+        </div>
+    </div>
+    [/group]
+</div>
+
+<div class="form-wrapper">
+    <h3>Lieferadresse</h3>
+    <label for="strasse">Straße, Hausnummer *
+        [text* strasse id:strasse autocomplete:street-address placeholder "Straße, Hausnummer"]
+    </label>
+
+    <div class="row">
+        <div class="col-12 col-md-5">
+            <label for="plz">PLZ *
+                [text* plz id:plz minlength:5 maxlength:5 autocomplete:postal-code placeholder "Postleitzahl"]
+            </label>
+        </div>
+        <div class="col-12 col-md-7">
+            <label for="ort">Ort *
+                [text* ort id:ort autocomplete:address-level2 placeholder "Ort"]
+            </label>
+        </div>
+    </div>
+
+    <p class="grouptitle">Geben Sie Ihre Zählernummer oder Marktlokation an</p>
+    <div role="group" aria-labelledby="identifikation">
+        [radio identifikation id:identifikation use_label_element default:1 "Zählernummer" "Marktlokation"]
+    </div>
+    [group ident-malo]
+    <label for="marktlokation">Marktlokation *
+        <span class="help-tooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="cdh-tooltip" data-bs-title="Die „Marktlokation“ (MaLo-ID) finden Sie auf Ihrer Rechnung. Sie bezieht sich auf den geografischen Standort, an dem Ihre Energieverbrauchsstelle registriert ist."></span>
+        [text* marktlokation id:marktlokation placeholder "Marktlokation ID (MaLo-ID)"]
+    </label>
+    [/group]
+    [group ident-zaehlernummer]
+    <label for="zaehlernummer">Zählernummer *
+        [text* zaehlernummer id:zaehlernummer placeholder "Zählernummer"]
+    </label>
+    [/group]
+</div>
+
+[step title "Zählerdaten"]
+
+<div class="form-wrapper">
+    <h2>Zählerdaten</h2>
+    [group modestrom]
+    <label for="getkwh">Voraussichtlicher Jahresverbrauch in kWh
+        [dynamic_text getkwh class:form-control dtx_pageload "CF7_GET key='kw_value'"]
+    </label>
+    [/group]
+    [group modegas]
+    <label for="getkwhgas">Voraussichtlicher Jahresverbrauch in kWh
+        [dynamic_text getkwhgas class:form-control dtx_pageload "CF7_GET key='gas_value'"]
+    </label>
+    [/group]
+</div>
+
+[step title "Anmeldung"]
+
+<div class="form-wrapper">
+    <h2>Angaben zur Anmeldung</h2>
+
+    <label for="anmeldung">Handelt es sich um einen Tarifwechsel, Umzug oder Lieferantenwechsel? *
+        [select* anmeldung id:anmeldung class:noselect2 include_blank "Tarifwechsel" "Umzug" "Lieferantenwechsel"]
+    </label>
+
+    [group tarifwechsel]
+    <div class="alert alert-info">Hinweis: Bestandskunden können einen Tarifwechsel auch über unser Online-Kundenportal vornehmen. <a href="https://onlineservice.service-rz.de/?act=login&werknr=23" target="_blank" title="Link öffnet in neuem Fenster">(Link zum Kundenportal)</a></div>
+    [/group]
+
+    [group umzug]
+    <label for="zaehlerstand">Zählerstand am Tag der Übernahme *
+        [text* zaehlerstand id:zaehlerstand placeholder "Zählerstand"]
+    </label>
+    [/group]
+
+    [group lieferantenwechsel]
+    <p>Wir übernehmen die Kündigung für Sie. Wir benötigen nur Ihren bisherigen Versorger und Ihre Kundennummer.</p>
+
+    <label for="bisheriger_versorger">Bisheriger Versorger *
+        [text* bisheriger_versorger id:bisheriger_versorger placeholder "Name des bisherigen Versorgers"]
+    </label>
+
+    <label for="kdnr_alt">Kundennummer beim bisherigen Versorger *
+        [text* kdnr_alt id:kdnr_alt placeholder "Kundennummer"]
+    </label>
+    [/group]
+
+    <label for="lieferbeginn">Wunschtermin für Lieferbeginn *
+        [select* lieferbeginn id:lieferbeginn use_label_element class:noselect2 include_blank "zum nächstmöglichen Termin" "zum festen Termin"]
+    </label>
+
+    [group lieferbeginn-datum]
+    <label for="datum">Bitte Datum auswählen *
+        [date* kuendigungsdatum id:datum]
+    </label>
+    [/group]
+
+    <div class="small">
+        <p>Sollten Sie keine Angabe machen oder sollte der angegebene Wunschtermin aufgrund von einzuhaltenden Fristen nicht möglich sein, erfolgt die Aufnahme der Belieferung zum nächstmöglichen Termin. Der verbindliche Liefertermin wird Ihnen in Ihrer Vertragsbestätigung mitgeteilt. Sollte aufgrund fehlender Bestätigung der Netznutzung durch den zuständigen Netzbetreiber eine Belieferung nicht möglich sein, wird ihnen dies entsprechend durch uns mitgeteilt. Eine Belieferung vor Ablauf der Widerrufsfrist erfolgt nur auf ausdrücklichen Wunsch des Kunden (Eintragung eines, in die Widerrufsfrist, fallenden Wunschtermins). Bezüglich der Widerrufsfrist und der Widerrufsfolgen siehe Ziffer 6 dieses Auftrags.</p>
+    </div>
+</div>
+
+[step title "Zahlung"]
+
+<div class="form-wrapper">
+    <h2>Zahlungsart wählen</h2>
+    <p>Als Zahlungsmöglichkeiten stehen dem:der Kunde:in die Erteilung eines SEPA-Lastschriftmandats, die Barzahlung vor Ort und die Überweisung zur Verfügung. Voraussetzung für die Nutzung des SEPA-Lastschriftverfahrens ist die Erteilung eines SEPA-Lastschriftmandates. Gesonderte Zahlungsaufforderungen für die Bezahlung der monatlichen Abschläge erstellt die SW Dülmen nicht.</p>
+
+    <p class="grouptitle">Zahlungsart</p>
+    <div role="group" aria-labelledby="zahlungsart">
+        [radio zahlungsart id:zahlungsart use_label_element default:2 "Lastschrift" "Überweisung"]
+    </div>
+
+    [group zahlung_lastschrift]
+    <h3>SEPA-Lastschriftmandat</h3>
+    <p>Hiermit ermächtige/n ich/wir, die SW Dülmen (Gläubiger-ID DE31ZZZ00000096896) widerruflich Zahlungen von meinem/unserem nachfolgenden Konto mittels der SEPA-Basislastschrift einzuziehen. Zugleich weise/n ich/wir mein/unser Kreditinstitut an, die von der SW Dülmen auf mein/unser Konto gezogenen SEPA-Basislastschriften einzulösen.</p>
+
+    <label for="kreditinstitut">Bank/Geldinstitut*
+        [text* kreditinstitut id:kreditinstitut]
+    </label>
+
+    <label for="iban">IBAN *
+        [text* iban id:iban minlength:22 maxlength:22]<small>[count iban down] von 22 Zeichen</small>
+    </label>
+    <label for="bic">BIC *
+        [text* bic id:bic maxlength:11]<small>max. 11 Zeichen</small>
+    </label>
+
+    <label for="kontoinhaber">Kontoinhaber <small>falls abweichend</small>
+        [text kontoinhaber id:kontoinhaber]
+    </label>
+
+    [group kunde_ja_sepa]
+    <p class="grouptitle">Das SEPA-Basis-Lastschrift-Mandat soll gelten für:</p>
+    <div role="group" aria-labelledby="sepagueltigfuer">
+        [checkbox* sepagueltigfuer id:sepagueltigfuer use_label_element "Alle — auch zukünftigen — unter der Kundennummer ... geführten Verträge." "Ausschließlich diesen Vertrag unter der Kundennummer ... mit der jeweiligen Endziffer ..."]
+    </div>
+
+    <label for="sepakdnr">Kundennummer *
+        [text* sepakdnr id:sepakdnr placeholder "Kundennummer"]
+    </label>
+
+    [group show_endziffer]
+    <label for="sepaendziffer">Endziffer des Vertrags *
+        [text* sepaendziffer id:sepaendziffer placeholder "Endziffer"]
+    </label>
+    [/group]
+
+    [/group]
+
+    <div class="small">
+        <p>Hinweis: Der:Die Kontoinhaber:in kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit dem Kreditinstitut des Kontoinhabers vereinbarten Bedingungen. Der:die Kunde:in erklärt sich bereits jetzt damit einverstanden, dass die vorstehende Bankverbindung auch im Falle einer Zahlungsrückerstattung durch den Lieferanten verwendet werden darf.</p>
+    </div>
+
+    [/group]
+</div>
+
+[step title "Zusammenfassung"]
+
+<div class="form-wrapper summary">
+    <h2>Zusammenfassung</h2>
+    <p>Bitte prüfen Sie Ihre Angaben!</p>
+    [summary]
+
+    <label for="anmerkung">Möchten Sie uns noch etwas mitteilen?
+        [textarea anmerkung id:anmerkung]
+    </label>
+</div>
+
+<div class="form-wrapper">
+    <h2>Rechtliches</h2>
+    <div class="acceptance">
+        [acceptance kommunikation id:kommunikation] Ich stimme der wechselseitigen Kommunikation per E-Mail an die von mir angegebene E-Mail-Adresse zu.[/acceptance]
+    </div>
+
+    <div class="acceptance">
+        [acceptance auftragserteilung id:auftragserteilung] Ich beauftrage die Belieferung bei den Stadtwerke Dülmen. Ebenso beauftrage ich die Stadtwerke Dülmen zur Kündigung meines bisherigen Anbieters (eine Versorgungsunterbrechung ist dadurch nicht zu befürchten)[/acceptance]
+    </div>
+
+    <div class="acceptance">
+        [acceptance agb id:agb] Ja, ich habe die <a href="/agb/" target="_blank">AGB</a> gelesen und verstanden.[/acceptance]
+    </div>
+
+    <div class="acceptance">
+        [acceptance datenschutz id:datenschutz] Ja, ich habe die <a href="/datenschutzerklaerung/" target="_blank">Datenschutzbestimmungen</a> zur Kenntnis genommen. Ich stimme zu, dass meine Angaben und Daten zur Beantwortung meiner Anfrage elektronisch erhoben und gespeichert werden. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an datenschutz@stadtwerke-duelmen-gmbh.de. widerrufen.[/acceptance]
+        <div class="small">
+            <p>Ihre Daten werden nur zur Beantwortung Ihrer Anfrage auf unserem gesicherten Email-Server gespeichert. Sie werden nicht an Dritte weitergegeben. Kommt kein Nutzungsvertrag zustande, bzw. antworten Sie innerhalb von 6 Monaten nicht auf unsere Angebote, werden die Daten gelöscht. Weitere Hinweise finden Sie in unserer Datenschutzerklärung.</p>
+        </div>
+    </div>
+
+    <div class="small">
+        <p>Widerrufsbelehrung für Verbraucher nach § 13 BGB</p>
+        <p>Widerrufsrecht: Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsschlusses. Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Stadtwerke Dülmen GmbH, Alter Ostdamm 21, 48249 Dülmen, Telefon 02594-7900 80, Telefax: 02594-7900-53, E-Mail: kundenservice@stadtwerke-duelmen-gmbh.de mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden. </p>
+        <p>Folgen des Widerrufs: Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. Haben Sie verlangt, dass die Dienstleistungen oder Lieferung von Strom während der Widerrufsfrist beginnen soll, so haben Sie uns einen angemessenen Betrag zu zahlen, der dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns von der Ausübung des Widerrufsrechts hinsichtlich dieses Vertrags unterrichten, bereits erbrachten Dienstleistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Dienstleistungen entspricht.</p>
+    </div>
+</div>
+
+[submit "Tarifanfrage absenden"]

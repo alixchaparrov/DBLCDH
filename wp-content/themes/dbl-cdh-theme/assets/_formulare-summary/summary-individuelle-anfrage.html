@@ -1,0 +1,148 @@
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td>
+                Sind Sie bereits Kunde bei uns?
+            </td>
+            <td>
+                [bereits-kunde]
+            </td>
+        </tr>
+        [kunde_ja]<tr>
+            <td>
+                Kundennummer
+            </td>
+            <td>
+                [kdnr]
+            </td>
+        </tr>[/kunde_ja]
+    </table>
+</div>
+
+<h2>Details</h2>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td>
+                Energieart
+            </td>
+            <td>
+                <span class="text-capitalize">[energieart]</span> <em>(Angabe über den Tarifrechner)</em>
+                [energieart-falsch]
+                <br />
+                [energieart-neu] <em>(Korrigierte Angabe)</em>[/energieart-falsch]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Jahresverbrauch in kWh
+            </td>
+            <td>
+                [jahresverbrauch-korrekt-strom][modestrom][getkwh] kWh <em>(Angabe über den Tarifrechner)</em>[/modestrom][/jahresverbrauch-korrekt-strom][jahresverbrauch-korrekt-gas][modegas][getkwhgas] kWh <em>(Angabe über den Tarifrechner)</em>[/modegas][/jahresverbrauch-korrekt-gas]
+                [jahresverbrauch-falsch]
+                <br />
+                [jahresverbrauch-neu] <em>(Korrigierte Angabe)</em>[/jahresverbrauch-falsch]
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h2>Vertragspartner</h2>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td>
+                Firma
+            </td>
+            <td>
+                [firma]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Anrede
+            </td>
+            <td>
+                [anrede]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Vorname, Nachname
+            </td>
+            <td>
+                [vorname] [nachname]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Telefonnummer
+            </td>
+            <td>
+                [telefon]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                E-Mail
+            </td>
+            <td>
+                [email]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Geburtsdatum
+            </td>
+            <td>
+                [geburtsdatum "d.m.Y"]
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h2>Lieferadresse</h2>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td>
+                Straße, Hausnummer
+            </td>
+            <td>
+                [strasse]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PLZ, Ort
+            </td>
+            <td>
+                [plz] [ort]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ortsteil
+            </td>
+            <td>
+                [ortsteil]
+            </td>
+        </tr>
+        [ident-malo]<tr>
+            <td>
+                Marktlokation
+            </td>
+            <td>
+                [marktlokation]
+            </td>
+        </tr>[/ident-malo]
+        [ident-zaehlernummer]<tr>
+            <td>
+                Zählernummer
+            </td>
+            <td>
+                [zaehlernummer]
+            </td>
+        </tr>[/ident-zaehlernummer]
+    </table>
+</div>

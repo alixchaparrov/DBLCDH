@@ -1,0 +1,104 @@
+Es liegt eine Tarif-Anfrage vor:
+
+######
+## Bereits Kunde: [bereits-kunde]
+[kunde_ja]
+Kundennummer: [kdnr]
+[/kunde_ja]
+
+######
+## Vertragspartner
+Anrede: [anrede]
+Vorname: [vorname]
+Nachname: [nachname]
+
+Geburtsdatum: [_format_geburtsdatum "d.m.Y"]
+
+Telefon: [telefon]
+E-Mail: [email]
+
+######
+## Lieferadresse
+Straße, Hausnummer: [strasse]
+PLZ, Ort: [plz] [ort]
+Ortsteil: [ortsteil]
+
+######
+## Zweiter Vertragspartner: [vertragspartner]
+[vertragspartner_ja]
+Vorname Vertragspartner: [vertragspartner_vorname]
+Nachname Vertragspartner: [vertragspartner_nachname]
+[/vertragspartner_ja]
+
+######
+## Tarifdetails
+Gewünschter Tarif: https://www.stadtwerke-duelmen.de/tarife/[gettarif]
+[modestrom]Energieart: Strom
+Tarifname: [gettitle]
+Geschätzter Jahresverbrauch (kWh): [getkwh] kWh
+PLZ, Ort: [getplz] [getort][/modestrom][modegas]Energieart: Gas
+Tarifname: [gettitle]
+Geschätzter Jahresverbrauch (kWh): [getkwhgas] kWh
+PLZ, Ort: [getplz] [getort][/modegas]
+
+######
+## Einzug oder Lieferantenwechsel: [einzuglieferant]
+[einzug]
+Einzugsdatum: [_format_einzugsdatum "d.m.Y"]
+Zählernummer: [zaehlernummer_einzug]
+Zählerstand: [zaehlerstand_einzug]
+Marktlokation: [marktlokation_einzug]
+[/einzug]
+[lieferantenwechsel]
+Bisheriger Versorger: [bisheriger_versorger]
+Kundennummer beim bisherigen Versorger: [kdnr_alt]
+Bisheriger Vertragspartner: [bisheriger_vertragspartner]
+Zählernummer: [zaehlernummer_wechsel]
+Marktlokation: [marktlokation_wechsel]
+Kündigungstermin: [kuendigungstermin] [kuendigungstermin-datum]- [kuendigungsdatum "d.m.Y"][/kuendigungstermin-datum]
+[/lieferantenwechsel]
+
+######
+## Abweichende Rechnungsanschrift: [rechnungsanschrift]
+[rechnungsanschrift_abweichend]
+Anrede: [anrede_rechnung]
+Vorname: [vorname_rechnung]
+Nachname: [nachname_rechnung]
+Straße: [strasse_rechnung]
+PLZ, Ort: [plz_rechnung] [ort_rechnung]
+[/rechnungsanschrift_abweichend]
+
+######
+## Zweiter Rechnungsempfänger: [zweite_rechnung]
+[rechnungsempfaenger_ja]
+Vorname: [rechnung2_vorname]
+Nachname: [rechnung2_nachname]
+[/rechnungsempfaenger_ja]
+
+######
+## Zahlungsart: [zahlungsart]
+[zahlung_lastschrift]
+Kreditinstitut: [kreditinstitut]
+IBAN: [iban]
+BIC: [bic]
+Kontoinhaber: [kontoinhaber]
+[/zahlung_lastschrift]
+
+Zahlung zum: [zahlungzum]
+
+Vertragsunterlagen: [vertragsunterlagen]
+[peremail]
+E-Mail für Vertrag: [email_vertrag]
+[/peremail]
+
+Anmerkung: [anmerkung]
+
+
+--
+######
+## Sonstige Infos
+
+Browser: [_user_agent]
+URL: [_url]
+Datum: [_date] / [_time] Uhr
+Ungültige Felder: [_invalid_fields]

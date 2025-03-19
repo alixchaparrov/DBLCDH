@@ -1,0 +1,404 @@
+<h3>Vertragspartner</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Sind Sie bereits Kunde bei uns?
+            </td>
+            <td>
+                [bereits-kunde]
+            </td>
+        </tr>
+        [kunde_ja]<tr>
+            <td>
+                Kundennummer
+            </td>
+            <td>
+                [kdnr]
+            </td>
+        </tr>[/kunde_ja]
+        <tr>
+            <td>
+                Anrede
+            </td>
+            <td>
+                [anrede]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Vorname, Nachname
+            </td>
+            <td>
+                [vorname] [nachname]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Telefonnummer
+            </td>
+            <td>
+                [telefon]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                E-Mail
+            </td>
+            <td>
+                [email]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Geburtsdatum
+            </td>
+            <td>
+                [geburtsdatum "d.m.Y"]
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h3>Lieferadresse</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Straße, Hausnummer
+            </td>
+            <td>
+                [strasse]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PLZ, Ort
+            </td>
+            <td>
+                [plz] [ort]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ortsteil
+            </td>
+            <td>
+                [ortsteil]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zweiter Vertragspartner?
+            </td>
+            <td>
+                [vertragspartner]
+            </td>
+        </tr>
+        [vertragspartner_ja]
+        <tr>
+            <td>
+                Vorname
+            </td>
+            <td>
+                [vertragspartner_vorname]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nachname
+            </td>
+            <td>
+                [vertragspartner_nachname]
+            </td>
+        </tr>
+        [/vertragspartner_ja]
+    </table>
+</div>
+
+<h3>Tarifdetails</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Jahresverbrauch in kWh
+            </td>
+            <td>
+                [modestrom][getkwh] kWh[/modestrom][modegas][getkwhgas] kWh[/modegas]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PLZ, Ort
+            </td>
+            <td>
+                [getplz] [getort]
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h3>Einzug oder Lieferantenwechsel?</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Einzug oder Lieferantenwechsel?
+            </td>
+            <td>
+                [einzuglieferant]
+            </td>
+        </tr>
+        [einzug]
+        <tr>
+            <td>
+                Einzugsdatum
+            </td>
+            <td>
+                [einzugsdatum "d.m.Y"]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zählernummer
+            </td>
+            <td>
+                [zaehlernummer_einzug]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zählerstand
+            </td>
+            <td>
+                [zaehlerstand_einzug]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Marktlokation
+            </td>
+            <td>
+                [marktlokation_einzug]
+            </td>
+        </tr>
+        [/einzug]
+        [lieferantenwechsel]
+        <tr>
+            <td>
+                Bisheriger Versorger
+            </td>
+            <td>
+                [bisheriger_versorger]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Bisherige Kundennummer
+            </td>
+            <td>
+                [kdnr_alt]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Bisheriger Vertragspartner
+            </td>
+            <td>
+                [bisheriger_vertragspartner]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zählernummer
+            </td>
+            <td>
+                [zaehlernummer_wechsel]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Marktlokation
+            </td>
+            <td>
+                [marktlokation_wechsel]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kündigungstermin
+            </td>
+            <td>
+                [kuendigungstermin] [kuendigungstermin-datum]- [kuendigungsdatum "d.m.Y"][/kuendigungstermin-datum]
+            </td>
+        </tr>
+        [/lieferantenwechsel]
+    </table>
+</div>
+
+<h3>Abweichende Rechnungsanschrift</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Abweichende Rechnungsanschrift?
+            </td>
+            <td>
+                [rechnungsanschrift]
+            </td>
+        </tr>
+        [rechnungsanschrift_abweichend]
+        <tr>
+            <td>
+                Anrede
+            </td>
+            <td>
+                [anrede_rechnung]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Vorname
+            </td>
+            <td>
+                [vorname_rechnung]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nachname
+            </td>
+            <td>
+                [nachname_rechnung]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Straße, Hausnummer
+            </td>
+            <td>
+                [strasse_rechnung]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                PLZ, Ort
+            </td>
+            <td>
+                [plz_rechnung] [ort_rechnung]
+            </td>
+        </tr>
+        [/rechnungsanschrift_abweichend]
+    </table>
+</div>
+
+<h3>Weiterer Rechnungsempfänger</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Weiterer Rechnungsempfänger gewünscht?
+            </td>
+            <td>
+                [zweite_rechnung]
+            </td>
+        </tr>
+        [rechnungsempfaenger_ja]
+        <tr>
+            <td>
+            </td>
+            <td>
+                [rechnung2_vorname]
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                [rechnung2_nachname]
+            </td>
+        </tr>
+        [/rechnungsempfaenger_ja]
+    </table>
+</div>
+
+<h3>Zahlungsart</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Gewählte Zahlungsart
+            </td>
+            <td>
+                [zahlungsart]
+            </td>
+        </tr>
+        [zahlung_lastschrift]
+    </table>
+</div>
+
+<h3>Bankdaten</h3>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Kreditinstitut
+            </td>
+            <td>
+                [kreditinstitut]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                IBAN
+            </td>
+            <td>
+                [iban]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BIC
+            </td>
+            <td>
+                [bic]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Abweichender Kontoinhaber?
+            </td>
+            <td>
+                [kontoinhaber]
+            </td>
+        </tr>
+        [/zahlung_lastschrift]
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Zahlung zum
+            </td>
+            <td>
+                [zahlungzum]
+            </td>
+        </tr>
+        <tr>
+            <td>Wie möchten Sie Ihre Vertragsunterlagen erhalten?</td>
+            <td>[vertragsunterlagen]</td>
+        </tr>
+        [peremail]
+        <tr>
+            <td>
+                E-Mail
+            </td>
+            <td>
+                [email_vertrag]
+            </td>
+        </tr>
+        [/peremail]
+    </table>
+</div>

@@ -1,0 +1,47 @@
+Es liegt eine Tarif-Anfrage vor:
+
+##################
+## Bereits Kunde: [bereits-kunde]
+[kunde_ja]Kundennummer: [kdnr][/kunde_ja]
+
+##################
+## Energieart:
+[energieart-tarifrechner]Energieart (Tarifrechner): [getmode][modegas]Gas[/modegas][modestrom]Strom[/modestrom][/energieart-tarifrechner][energieart-falsch]Energieart (korrigiert): [energieart-neu][/energieart-falsch]
+
+## Angaben zum Jahresverbrauch
+[jahresverbrauch-korrekt-strom][modestrom]Jahresverbrauch (Tarifrechner): [getkwh] kWh[/modestrom][/jahresverbrauch-korrekt-strom]
+[jahresverbrauch-korrekt-gas][modegas]Jahresverbrauch (Tarifrechner): [getkwhgas] kWh[/modegas][/jahresverbrauch-korrekt-gas]
+[jahresverbrauch-falsch]Jahresverbrauch (korrigiert): [jahresverbrauch-neu] kWh[/jahresverbrauch-falsch]
+
+##################
+## Vertragspartner
+
+Firma: [firma]
+Anrede: [anrede]
+Vorname: [vorname]
+Nachname: [nachname]
+
+Geburtsdatum: [_format_geburtsdatum "d.m.Y"]
+
+Telefon: [telefon]
+E-Mail: [email]
+
+##################
+## Lieferadresse
+
+Straße, Hausnummer: [strasse]
+PLZ, Ort: [plz] [ort]
+Ortsteil: [ortsteil]
+Marktlokations ID: [marktlokation]
+
+Anmerkung: [anmerkung]
+
+
+--
+##################
+## Sonstige Infos
+
+Browser: [_user_agent]
+URL: [_url]
+Datum: [_date] / [_time] Uhr
+Ungültige Felder: [_invalid_fields]

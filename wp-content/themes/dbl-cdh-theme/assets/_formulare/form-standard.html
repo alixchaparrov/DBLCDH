@@ -1,0 +1,77 @@
+<div class="form-wrapper">
+    <h2>Feldarten</h2>
+
+    <label>Select *
+        [select* beispiel-select id:beispiel-select class:noselect2 autocomplete:sex include_blank "Herr" "Frau" "Divers"]
+    </label>
+
+    <label>URL
+        [url beispiel-url id:beispiel-url]
+    </label>
+
+    <label>Telefon
+        [tel beispiel-tel id:beispiel-tel]
+    </label>
+
+    <label>Range
+        [range beispiel-number min:10 max:100 id:beispiel-number]
+    </label>
+
+    <label>Number
+        [number beispiel-number2 min:10 max:100 id:beispiel-number2]
+    </label>
+
+
+    <label>Datumsfeld *
+        [date* beispiel-datum id:beispiel-datum placeholder "datumsfeld"]
+    </label>
+
+    <p class="grouptitle">Gruppenname</p>
+    <div role="group" aria-labelledby="beispiel-checkbox">
+        [checkbox* beispiel-checkbox id:beispiel-checkbox use_label_element "Option 1" "Lorem ipsum dolor sit amet, consetetur sadipscing elitr" "Option 3"]
+    </div>
+
+    <p class="grouptitle">Gruppenname</p>
+    <div role="group" aria-labelledby="beispiel-radio">
+        [radio beispiel-radio id:beispiel-radio use_label_element default:1 "Option 1" "Option 2" "Option 3"]
+    </div>
+
+    <label>Textarea
+        [textarea* beispiel-textarea id:beispiel-textarea x3 minlength:5 maxlength:500]
+        <small class="counter">[count beispiel-textarea down] von 500 Zeichen</small>
+    </label>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            Feld hier
+        </div>
+        <div class="col-12 col-md-6">
+            Feld hier
+        </div>
+    </div>
+
+    <label>Textfeld
+        [text beispiel-text id:beispiel-text placeholder "Blabla"]
+    </label>
+
+    <label>E-Mail *
+        <span class="help-tooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="hgn-tooltip" data-bs-title="An diese E-Mailadresse erhalten Sie die Kündigungsbestätigung."></span>
+        [email* email id:email autocomplete:email placeholder "E-Mail"]
+    </label>
+</div>
+
+<div class="form-wrapper">
+    <h2>Rechtliches</h2>
+    <div class="acceptance">
+        [acceptance datenrichtig id:datenrichtig] Hiermit bestätige ich die Richtigkeit der o.a. Daten.[/acceptance]
+    </div>
+
+    <div class="acceptance">
+        [acceptance datenschutz id:datenschutz] Ja, ich habe die <a href="/datenschutzerklaerung/" target="_blank">Datenschutzbestimmungen</a> zur Kenntnis genommen. Ich stimme zu, dass meine Angaben und Daten zur Beantwortung meiner Anfrage elektronisch erhoben und gespeichert werden. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an datenschutz@stadtwerke-duelmen-gmbh.de. widerrufen.[/acceptance]
+        <div class="small">
+            <p>Ihre Daten werden nur zur Beantwortung Ihrer Anfrage auf unserem gesicherten Email-Server gespeichert. Sie werden nicht an Dritte weitergegeben. Kommt kein Nutzungsvertrag zustande, bzw. antworten Sie innerhalb von 6 Monaten nicht auf unsere Angebote, werden die Daten gelöscht. Weitere Hinweise finden Sie in unserer Datenschutzerklärung.</p>
+        </div>
+    </div>
+</div>
+
+[submit "Submit Button"]

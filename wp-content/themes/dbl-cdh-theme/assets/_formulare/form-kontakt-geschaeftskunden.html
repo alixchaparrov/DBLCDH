@@ -1,0 +1,40 @@
+<div class="form-wrapper">
+    <h2>Kontaktformular</h2>
+    <small class="mb-3">Felder mit einem * sind Pflichtfelder.</small>
+    <label for="firma">Firma *
+        [text* firma id:firma autocomplete:organization placeholder "Firma"]
+    </label>
+
+    <label for="vornachname">Name, Vorname
+        [text vornachname id:vornachname placeholder "Name, Vorname"]
+    </label>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <label for="telefon">Telefon
+                [text telefon id:telefon autocomplete:tel placeholder "Telefon"]
+            </label>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="email">E-Mail *
+                [email* email id:email autocomplete:email placeholder"E-Mail"]
+            </label>
+        </div>
+    </div>
+
+    <label for="anmerkung">Wie können wir Ihnen helfen? *
+        [textarea* anmerkung id:anmerkung]
+    </label>
+
+    <div class="acceptance">
+        [acceptance kommunikation id:kommunikation] Ich stimme der wechselseitigen Kommunikation per E-Mail an die von mir angegebene E-Mail-Adresse zu.[/acceptance]
+    </div>
+
+    <div class="acceptance">
+        [acceptance datenschutz id:datenschutz] Ja, ich habe die <a href="/datenschutzerklaerung/" target="_blank">Datenschutzbestimmungen</a> zur Kenntnis genommen. Ich stimme zu, dass meine Angaben und Daten zur Beantwortung meiner Anfrage elektronisch erhoben und gespeichert werden. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an datenschutz@stadtwerke-duelmen-gmbh.de. widerrufen.[/acceptance]
+        <div class="small">
+            <p>Ihre Daten werden nur zur Beantwortung Ihrer Anfrage auf unserem gesicherten Email-Server gespeichert. Sie werden nicht an Dritte weitergegeben. Kommt kein Nutzungsvertrag zustande, bzw. antworten Sie innerhalb von 6 Monaten nicht auf unsere Angebote, werden die Daten gelöscht. Weitere Hinweise finden Sie in unserer Datenschutzerklärung.</p>
+        </div>
+    </div>
+    [submit "Formular absenden"]
+</div>
