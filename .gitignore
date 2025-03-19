@@ -1,0 +1,26 @@
+# Ignoriere die Konfigurationsdatei von WordPress (enthält Passwörter und API-Schlüssel)
+wp-config.php
+
+# Ignoriere die .htaccess-Datei (Server-Konfiguration)
+.htaccess
+
+# Ignoriere die Datenbank (und Backups)
+*.sql
+wp-content/uploads/
+
+# Ignoriere Plugins und Themen, die speziell für die lokale Umgebung sind
+wp-content/plugins/*
+wp-content/themes/*
+
+# Ignoriere den Cache-Ordner von WordPress
+wp-content/cache/
+
+# Ignoriere Log-Dateien
+*.log
+
+# Ignoriere Konfigurationsdateien für IDEs (z.B. Visual Studio Code)
+.vscode/
+
+# Ignoriere lokal spezifische Konfigurationsdateien für WordPress
+wp-content/object-cache.php
+wp-content/db.php
