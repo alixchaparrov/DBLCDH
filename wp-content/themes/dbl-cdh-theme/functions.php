@@ -13,7 +13,8 @@ if (!defined('_S_VERSION')) {
 function dbl_cdh_scripts() {
     // Bootstrap CSS desde CDN
     wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', array(), '5.3.2');
-    
+    // Google Fonts - Noto Sans
+     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap', array(), null);
     // Estilos principales del tema
     wp_enqueue_style('dbl-cdh-style', get_stylesheet_uri(), array('bootstrap'), _S_VERSION);
     
