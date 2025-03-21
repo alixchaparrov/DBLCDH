@@ -2,53 +2,121 @@
  * Stile für den WordPress-Editor
  */
 
- /* Basisstile - für alle Geräte */
- .editor-styles-wrapper {
+/* Basisstile - für alle Geräte */
+.editor-styles-wrapper {
     font-family: 'Noto Sans', sans-serif;
     color: #333;
     line-height: 1.5;
- }
-
-/* Menüs - Standardversion für mobile Geräte */
- .editor-styles-wrapper .menu-primary-container,
- .editor-styles-wrapper .menu-footer-container,
- .editor-styles.wrapper .menu-social-container,
- .editor-styles-wrapper .menu-legal-container {
+  }
+  
+  /* Menüs - Standardversion für mobile Geräte */
+  .editor-styles-wrapper .menu-primary-container,
+  .editor-styles-wrapper .menu-footer-container,
+  .editor-styles-wrapper .menu-social-container,
+  .editor-styles-wrapper .menu-legal-container {
     margin-bottom: 1rem;
-    width: 100%
- }
-
- /*Sidebar - Standardversion für mobile Geräte*/
-.editor-styles-wrapper .widget-area {
+    width: 100%;
+  }
+  
+  /* Primäres Menü Styling */
+  .editor-styles-wrapper .menu-primary-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .editor-styles-wrapper .menu-primary-container ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .editor-styles-wrapper .menu-primary-container ul li a {
+    color: #151b35;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+  .editor-styles-wrapper .menu-primary-container ul li a:hover,
+  .editor-styles-wrapper .menu-primary-container ul li a:focus {
+    color: #E50046;
+  }
+  
+  /* Sidebar - Standardversion für mobile Geräte */
+  .editor-styles-wrapper .widget-area {
     background-color: #f9f9f9;
     padding: 1rem;
     border-radius: 0.25rem;
     margin-top: 2rem;
-}
-
-.editor-styles-wrapper .widget-title {
+  }
+  
+  .editor-styles-wrapper .widget-title {
     color: #182A4C;
     border-bottom: 2px solid #E50046;
     padding-bottom: 0.5rem;
-    margin-bottom:1rem;
-    font-size:1.1rem;
-}
-
-/*Widgets für den Footer - mobile Version*/
-.editor-styles-wrapper .footer-widgets {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Widgets - allgemeiner Stil */
+  .editor-styles-wrapper .widget {
+    margin-bottom: 1.5rem;
+  }
+  
+  .editor-styles-wrapper .widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .editor-styles-wrapper .widget ul li {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .editor-styles-wrapper .widget ul li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .editor-styles-wrapper .widget a {
+    color: #008ab7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .editor-styles-wrapper .widget a:hover,
+  .editor-styles-wrapper .widget a:focus {
+    color: #E50046;
+  }
+  
+  /* Widgets für den Footer - mobile Version */
+  .editor-styles-wrapper .footer-widgets {
     background-color: #1B2A4C;
     color: #fff;
     padding: 1.5rem 1rem;
-}
-
-.editor-styles-wrapper .footer-widgets .widget-title {
+  }
+  
+  .editor-styles-wrapper .footer-widgets .widget-title {
     color: #fff;
     font-size: 1.1rem;
     border-color: #fff;
-}
-
-/* Barrierrefreie Elemente */
-.editor-styles-wrapper .screem-reader-text {
+  }
+  
+  .editor-styles-wrapper .footer-widgets a {
+    color: #fff;
+  }
+  
+  .editor-styles-wrapper .footer-widgets a:hover,
+  .editor-styles-wrapper .footer-widgets a:focus {
+    color: #65C8E8;
+  }
+  
+  /* Barrierefreie Elemente */
+  .editor-styles-wrapper .screen-reader-text {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -58,15 +126,15 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-}
-
-.editor-styles-wrapper .screem-reader-text:focus {
+  }
+  
+  .editor-styles-wrapper .screen-reader-text:focus {
     background-color: #E50046;
     color: #fff;
-    display:block;
+    display: block;
     font-size: 1rem;
     font-weight: 700;
-    height:auto;
+    height: auto;
     left: 5px;
     line-height: normal;
     padding: 15px 23px 14px;
@@ -74,58 +142,267 @@
     top: 5px;
     width: auto;
     z-index: 100000;
-    clip:auto !important;
-    border-radius:3px;
-}
-
-/* Media queries für tablet */
-@media screen and (min-width: 768px) {
+    clip: auto !important;
+    border-radius: 3px;
+  }
+  
+  /* Formular-Elemente im Editor */
+  .editor-styles-wrapper input[type="text"],
+  .editor-styles-wrapper input[type="email"],
+  .editor-styles-wrapper input[type="url"],
+  .editor-styles-wrapper input[type="password"],
+  .editor-styles-wrapper input[type="search"],
+  .editor-styles-wrapper input[type="number"],
+  .editor-styles-wrapper input[type="tel"],
+  .editor-styles-wrapper input[type="range"],
+  .editor-styles-wrapper input[type="date"],
+  .editor-styles-wrapper input[type="month"],
+  .editor-styles-wrapper input[type="week"],
+  .editor-styles-wrapper input[type="time"],
+  .editor-styles-wrapper input[type="datetime"],
+  .editor-styles-wrapper input[type="datetime-local"],
+  .editor-styles-wrapper input[type="color"],
+  .editor-styles-wrapper textarea,
+  .editor-styles-wrapper select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    width: 100%;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  
+  .editor-styles-wrapper input[type="submit"],
+  .editor-styles-wrapper button:not(.components-button) {
+    background-color: #E50046;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .editor-styles-wrapper input[type="submit"]:hover,
+  .editor-styles-wrapper button:not(.components-button):hover {
+    background-color: #151b35;
+  }
+  
+  /* Blockeditor Elemente */
+  .editor-styles-wrapper .wp-block-button__link {
+    background-color: #E50046;
+    color: #fff;
+  }
+  
+  .editor-styles-wrapper .wp-block-button__link:hover {
+    background-color: #151b35;
+  }
+  
+  .editor-styles-wrapper .wp-block-quote {
+    border-left: 4px solid #E50046;
+    padding-left: 1.5rem;
+  }
+  
+  .editor-styles-wrapper .wp-block-separator {
+    border-bottom: 2px solid #65C8E8;
+  }
+  
+  /* Accordions im Editor */
+  .editor-styles-wrapper .wp-block-accordion {
+    margin-bottom: 1.5rem;
+  }
+  
+  .editor-styles-wrapper .wp-block-accordion .wp-block-accordion-item {
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .editor-styles-wrapper .wp-block-accordion .wp-block-accordion-item .wp-block-accordion-item-title {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .editor-styles-wrapper .wp-block-accordion .wp-block-accordion-item .wp-block-accordion-item-content {
+    padding: 1rem;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  /* Media queries für tablet */
+  @media screen and (min-width: 768px) {
     .editor-styles-wrapper .widget-title {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
-    
+  
     .editor-styles-wrapper .footer-widgets {
-        padding: 2rem;
+      padding: 2rem;
+    }
+  
+    .editor-styles-wrapper .footer-widgets .widget {
+      display: inline-block;
+      vertical-align: top;
+      width: 48%;
+      margin-right: 1%;
     }
     
-    .editor-styles-wrapper .footer-widgets .widget {
-        display: inline-block;
-        vertical-align: top;
-        width: 48%;
-        margin-right: 1%;
+    /* Verbesserte Menüs für Tablets */
+    .editor-styles-wrapper .menu-primary-container ul {
+      display: flex;
+      flex-wrap: wrap;
     }
-}
-
-/* Media queries für desktop */
-@media screen and (min-width: 992px) {
+    
+    .editor-styles-wrapper .menu-primary-container ul li {
+      margin-right: 1.5rem;
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Media queries für desktop */
+  @media screen and (min-width: 992px) {
     .editor-styles-wrapper .widget-area {
-        padding: 1.5rem;
-        margin-top: 0;
+      padding: 1.5rem;
+      margin-top: 0;
     }
-    
+  
     .editor-styles-wrapper .widget-title {
-        font-size: 1.25rem;
+      font-size: 1.25rem;
     }
-    
+  
     .editor-styles-wrapper .footer-widgets {
-        padding: 2.5rem 2rem;
+      padding: 2.5rem 2rem;
     }
-    
+  
     .editor-styles-wrapper .footer-widgets .widget {
-        width: 23%;
-        margin-right: 2%;
+      width: 23%;
+      margin-right: 2%;
     }
-    
+  
     /* Konfiguration der Desktop-Spalten */
     .editor-styles-wrapper .wp-block-columns {
-        flex-wrap: nowrap;
+      flex-wrap: nowrap;
     }
-}
-
-/* Media queries für große Bildschirme */
-@media screen and (min-width: 1200px) {
+    
+    /* Verbessertes Menü für Desktop */
+    .editor-styles-wrapper .menu-primary-container ul li.menu-item-has-children {
+      position: relative;
+    }
+    
+    .editor-styles-wrapper .menu-primary-container ul li.menu-item-has-children > a::after {
+      content: '▼';
+      font-size: 0.7em;
+      margin-left: 0.5em;
+      vertical-align: middle;
+    }
+    
+    .editor-styles-wrapper .menu-primary-container ul li.menu-item-has-children:hover > ul {
+      display: block;
+    }
+    
+    .editor-styles-wrapper .menu-primary-container ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0.25rem;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      z-index: 100;
+    }
+    
+    .editor-styles-wrapper .menu-primary-container ul ul li {
+      margin: 0;
+      width: 100%;
+    }
+    
+    .editor-styles-wrapper .menu-primary-container ul ul li a {
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+  }
+  
+  /* Media queries für große Bildschirme */
+  @media screen and (min-width: 1200px) {
     .editor-styles-wrapper .container {
-        max-width: 1140px;
-        margin: 0 auto;
+      max-width: 1140px;
+      margin: 0 auto;
     }
-}
+  }
+  
+  /* Spezifische Styles für den Hero-Bereich */
+  .editor-styles-wrapper .hero-section {
+    background-color: #E50046;
+    color: #fff;
+    padding: 3rem 0;
+    position: relative;
+  }
+  
+  .editor-styles-wrapper .hero-section h1,
+  .editor-styles-wrapper .hero-section h2,
+  .editor-styles-wrapper .hero-section h3 {
+    color: #fff;
+  }
+  
+  .editor-styles-wrapper .hero-section .wp-block-button__link {
+    background-color: #fff;
+    color: #E50046;
+  }
+  
+  /* Stil für Service-Bereiche */
+  .editor-styles-wrapper .services-section .wp-block-column {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .editor-styles-wrapper .services-section .wp-block-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Stil für Themenkarten */
+  .editor-styles-wrapper .themes-card {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .editor-styles-wrapper .themes-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .editor-styles-wrapper .themes-card .wp-block-image {
+    margin-bottom: 0;
+  }
+  
+  .editor-styles-wrapper .themes-card .wp-block-group {
+    padding: 1.5rem;
+  }
+  
+  /* Kontaktformular Stil */
+  .editor-styles-wrapper .contact-form {
+    background-color: #f9f9f9;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+  }
+  
+  /* Newsletter Bereich */
+  .editor-styles-wrapper .newsletter-section {
+    background-color: #008ab7;
+    color: #fff;
+    padding: 2rem 0;
+  }
+  
+  .editor-styles-wrapper .newsletter-section h2,
+  .editor-styles-wrapper .newsletter-section h3 {
+    color: #fff;
+  }
